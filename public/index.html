@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xanh AI Studio – Làm video AI theo yêu cầu</title>
+  <meta name="description" content="Editor chuyên làm video AI: quảng cáo, TikTok, MV, avatar AI. Đặt video nhanh, giá tốt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="#" class="logo"><span class="logo-dot"></span>Xanh<b>AI</b> Studio</a>
+      <nav class="menu">
+        <a href="#dich-vu">Dịch vụ</a>
+        <a href="#trai-nghiem">Trải nghiệm</a>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#quy-trinh">Quy trình</a>
+      </nav>
+      <a href="#dat-video" class="btn btn-sm">Đặt video</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="glow g1"></div><div class="glow g2"></div>
+    <div class="wrap hero-in">
+      <div>
+        <span class="tag">✨ Video AI theo yêu cầu</span>
+        <h1>Biến ý tưởng thành <span class="grad">video AI</span> ấn tượng chỉ trong vài ngày</h1>
+        <p class="lead">Video quảng cáo, TikTok/Reels, MV, avatar người dẫn AI… Bạn mô tả ý tưởng, mình lo phần còn lại — kịch bản, hình ảnh, giọng đọc, dựng hoàn chỉnh.</p>
+        <div class="hero-cta">
+          <a href="#dat-video" class="btn">Đặt làm video ngay</a>
+          <a href="#trai-nghiem" class="btn btn-ghost">Xem trải nghiệm</a>
+        </div>
+        <div class="stats">
+          <div><b>200+</b><span>video đã làm</span></div>
+          <div><b>48h</b><span>giao bản nháp</span></div>
+          <div><b>3 lần</b><span>chỉnh sửa miễn phí</span></div>
+        </div>
+      </div>
+      <div class="stage" id="stage3d">
+        <div class="stage-san"></div>
+        <img class="noi-3d" src="models/icon/clapper_board.png" alt="" style="--x:2%;--y:4%;--s:78px;--d:0s;--k:-14px">
+        <img class="noi-3d" src="models/icon/movie_camera.png" alt="" style="--x:80%;--y:0%;--s:86px;--d:-1.5s;--k:18px">
+        <img class="noi-3d" src="models/icon/popcorn.png" alt="" style="--x:88%;--y:52%;--s:64px;--d:-3s;--k:-10px">
+        <img class="noi-3d" src="models/icon/sparkles.png" alt="" style="--x:44%;--y:-2%;--s:52px;--d:-2s;--k:12px">
+        <img class="noi-3d" src="models/icon/glowing_star.png" alt="" style="--x:-4%;--y:48%;--s:50px;--d:-4s;--k:20px">
+        <img class="nv nv-phu" src="nhan-vat/heo-dao-dien.svg" alt="Chú heo đạo diễn" style="--k:-8px">
+        <img class="nv nv-chinh" src="nhan-vat/heo-quay-phim.svg" alt="Chú heo quay phim" style="--k:10px">
+        <span class="goi-y">Bấm vào các bạn heo nhé 🐷</span>
+        <div class="screen-txt">
+          <small>PROMPT</small>
+          <p id="typing"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dich-vu" class="sec">
+    <div class="wrap">
+      <h2>Dịch vụ</h2>
+      <p class="sub">Chọn loại video phù hợp với mục tiêu của bạn</p>
+      <div class="grid4">
+        <div class="card"><img class="ico3d" src="models/icon/movie_camera.png" alt=""><h3>Video quảng cáo</h3><p>Giới thiệu sản phẩm, thương hiệu với hình ảnh AI chất lượng cao, chi phí thấp hơn quay thật.</p></div>
+        <div class="card"><img class="ico3d" src="models/icon/clapper_board.png" alt=""><h3>TikTok / Reels</h3><p>Video dọc ngắn, bắt trend, hook 3 giây đầu, tối ưu để lên xu hướng.</p></div>
+        <div class="card"><img class="ico3d" src="models/icon/glowing_star.png" alt=""><h3>MV / Video nhạc AI</h3><p>Dựng MV từ bài hát của bạn, nhân vật và bối cảnh tạo bằng AI.</p></div>
+        <div class="card"><img class="ico3d" src="models/icon/robot.png" alt=""><h3>Avatar người dẫn AI</h3><p>Người dẫn ảo nói tiếng Việt, khớp khẩu hình, dùng cho đào tạo, bán hàng.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trai-nghiem" class="sec sec-alt">
+    <div class="wrap">
+      <h2>Trải nghiệm thử</h2>
+      <p class="sub">Chọn phong cách và xem thử ý tưởng video của bạn sẽ trông như thế nào</p>
+      <div class="demo">
+        <div class="demo-ctl">
+          <label>Ý tưởng của bạn</label>
+          <input id="demo-y" maxlength="80" placeholder="VD: Quảng cáo trà sữa mùa hè">
+          <label>Phong cách</label>
+          <div class="chips" id="demo-style">
+            <button class="chip on" data-s="dien-anh">🎬 Điện ảnh</button>
+            <button class="chip" data-s="anime">🌸 Anime</button>
+            <button class="chip" data-s="neon">🌃 Neon</button>
+            <button class="chip" data-s="3d">🧸 Hoạt hình 3D</button>
+          </div>
+          <label>Tỉ lệ khung hình</label>
+          <div class="chips" id="demo-ratio">
+            <button class="chip on" data-r="16/9">16:9 YouTube</button>
+            <button class="chip" data-r="9/16">9:16 TikTok</button>
+            <button class="chip" data-r="1/1">1:1 Facebook</button>
+          </div>
+          <a href="#dat-video" class="btn" id="demo-dat">Đặt video với ý tưởng này</a>
+        </div>
+        <div class="demo-view">
+          <div class="frame s-dien-anh" id="demo-frame" style="aspect-ratio:16/9">
+            <div class="frame-bars"></div>
+            <div class="frame-title" id="demo-title">Ý tưởng của bạn</div>
+            <div class="frame-sub" id="demo-sub">Phong cách điện ảnh · 16:9</div>
+          </div>
+          <p class="note">* Khung minh hoạ phong cách. Video thật được làm riêng theo yêu cầu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bang-gia" class="sec">
+    <div class="wrap">
+      <h2>Bảng giá tham khảo</h2>
+      <p class="sub">Giá cuối cùng tuỳ độ phức tạp — mình sẽ báo giá chi tiết khi liên hệ lại</p>
+      <div class="grid3">
+        <div class="price"><h3>Cơ bản</h3><div class="p">từ 500K</div><ul><li>Video ≤ 30 giây</li><li>Nhạc nền, chữ</li><li>1 lần chỉnh sửa</li><li>Giao 2–3 ngày</li></ul><a href="#dat-video" class="btn btn-ghost" data-goi="Cơ bản">Chọn gói</a></div>
+        <div class="price hot"><span class="badge">Phổ biến</span><h3>Tiêu chuẩn</h3><div class="p">từ 1.5 triệu</div><ul><li>Video ≤ 60 giây</li><li>Kịch bản + giọng đọc AI</li><li>3 lần chỉnh sửa</li><li>Giao 3–5 ngày</li></ul><a href="#dat-video" class="btn" data-goi="Tiêu chuẩn">Chọn gói</a></div>
+        <div class="price"><h3>Cao cấp</h3><div class="p">từ 4 triệu</div><ul><li>Video ≤ 3 phút / MV</li><li>Nhân vật AI nhất quán</li><li>Chỉnh sửa không giới hạn</li><li>Ưu tiên tiến độ</li></ul><a href="#dat-video" class="btn btn-ghost" data-goi="Cao cấp">Chọn gói</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quy-trinh" class="sec sec-alt">
+    <div class="wrap">
+      <h2>Quy trình làm việc</h2>
+      <div class="steps">
+        <div><b>1</b><h4>Gửi yêu cầu</h4><p>Điền form bên dưới, để lại SĐT / Zalo / Facebook.</p></div>
+        <div><b>2</b><h4>Đặt cọc</h4><p>Quét mã QR để đặt cọc giữ lịch, ghi mã đơn khi chuyển khoản.</p></div>
+        <div><b>3</b><h4>Mình liên hệ</h4><p>Trao đổi chi tiết ý tưởng, chốt kịch bản và giá.</p></div>
+        <div><b>4</b><h4>Nhận video</h4><p>Xem bản nháp, góp ý chỉnh sửa, nhận bản hoàn chỉnh.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dat-video" class="sec">
+    <div class="wrap narrow form-wrap">
+      <div class="mascot" id="mascot3d" aria-hidden="true">
+        <span class="mascot-noi">Gửi yêu cầu cho em nha! 💖</span>
+        <img class="nv nv-meo" src="nhan-vat/heo-vay-tay.svg" alt="" style="--k:6px">
+        <img class="noi-3d" src="models/icon/pig_face.png" alt="" style="--x:72%;--y:30%;--s:60px;--d:-1s;--k:10px">
+        <img class="noi-3d" src="models/icon/film_frames.png" alt="" style="--x:2%;--y:40%;--s:52px;--d:-2.5s;--k:-10px">
+      </div>
+      <h2>Đặt làm video</h2>
+      <p class="sub">Điền thông tin, mình sẽ xem đơn và liên hệ lại với bạn sớm nhất</p>
+      <form id="form-dat" class="form" novalidate>
+        <div class="row2">
+          <div><label>Họ tên *</label><input name="ten" required maxlength="100" placeholder="Nguyễn Văn A"></div>
+          <div><label>Loại video *</label>
+            <select name="loaiVideo" required>
+              <option value="">— Chọn —</option>
+              <option>Video quảng cáo</option><option>TikTok / Reels</option>
+              <option>MV / Video nhạc AI</option><option>Avatar người dẫn AI</option><option>Khác</option>
+            </select>
+          </div>
+        </div>
+        <div class="row3">
+          <div><label>Thời lượng</label>
+            <select name="thoiLuong"><option value="">— Chọn —</option><option>Dưới 30 giây</option><option>30–60 giây</option><option>1–3 phút</option><option>Trên 3 phút</option></select>
+          </div>
+          <div><label>Ngân sách / gói</label>
+            <select name="nganSach" id="nganSach"><option value="">— Chọn —</option><option>Cơ bản</option><option>Tiêu chuẩn</option><option>Cao cấp</option><option>Cần tư vấn</option></select>
+          </div>
+          <div><label>Cần trước ngày</label><input type="date" name="hanChot"></div>
+        </div>
+        <label>Mô tả yêu cầu *</label>
+        <textarea name="moTa" id="moTa" required rows="5" maxlength="3000" placeholder="Nội dung, phong cách, nhân vật, lời thoại, link video tham khảo..."></textarea>
+
+        <h3 class="form-h">Thông tin liên hệ</h3>
+        <div class="row2">
+          <div><label>Số điện thoại *</label><input name="sdt" required inputmode="tel" maxlength="20" placeholder="09xx xxx xxx"></div>
+          <div><label>Số Zalo</label><input name="zalo" inputmode="tel" maxlength="50" placeholder="Để trống nếu trùng SĐT"></div>
+        </div>
+        <div class="row2">
+          <div><label>Facebook</label><input name="facebook" maxlength="200" placeholder="Link hoặc tên Facebook"></div>
+          <div><label>Email</label><input type="email" name="email" maxlength="100" placeholder="ban@email.com"></div>
+        </div>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="err" id="loi" hidden></div>
+        <button type="submit" class="btn btn-big" id="nut-gui">Gửi yêu cầu</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">© <span id="nam"></span> Xanh AI Studio · Làm video AI theo yêu cầu
+      <p class="credit">Icon 3D: Microsoft Fluent Emoji (MIT)</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box">
+      <button class="x" id="dong" aria-label="Đóng">×</button>
+      <img class="nv-like" src="nhan-vat/heo-like.svg" alt="">
+      <h3>Đã gửi yêu cầu thành công!</h3>
+      <p>Mã đơn của bạn: <b class="ma" id="ma-don"></b></p>
+      <p class="small">Mình sẽ xem đơn và liên hệ lại qua SĐT / Zalo / Facebook bạn đã để lại.</p>
+      <img src="qr.jpg" alt="Mã QR chuyển khoản" class="qr">
+      <p class="small">Quét QR để đặt cọc / ủng hộ. Nội dung chuyển khoản ghi <b id="ma-don2"></b>.</p>
+      <button class="btn" id="dong2">Đã hiểu</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

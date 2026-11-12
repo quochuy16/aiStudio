@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Quản lý đơn – Xanh AI Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ad { padding: 30px 0 60px; }
+    .ad-top { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
+    .ad-top h1 { font-size: 26px; margin: 0 auto 0 0; }
+    .ad-top select, .ad-top input { width: auto; }
+    .login { max-width: 360px; margin: 80px auto; }
+    .tk { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .tk span { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; font-size: 14px; color: var(--muted); }
+    .tk b { color: var(--text); }
+    .don { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 14px; }
+    .don.moi { border-left: 4px solid var(--a2); }
+    .don-h { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .don-h b { font-size: 17px; }
+    .don-h .ma { font-size: 14px; }
+    .don-h time { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .meta { color: var(--muted); font-size: 14px; margin: 6px 0; }
+    .mota { white-space: pre-wrap; background: var(--bg); border-radius: 10px; padding: 10px 14px; margin: 8px 0; font-size: 15px; }
+    .lh { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+    .lh a, .lh span { font-size: 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+    .lh a:hover { border-color: var(--a1); }
+    .ctl { display: grid; grid-template-columns: 180px 1fr auto auto; gap: 8px; margin-top: 10px; }
+    .ctl .btn { padding: 8px 16px; font-size: 14px; }
+    .xoa { background: transparent; border: 1px solid var(--err); color: var(--err); box-shadow: none; }
+    .rong { text-align: center; color: var(--muted); padding: 40px; }
+    @media (max-width: 640px) { .ctl { grid-template-columns: 1fr 1fr; } .ctl input { grid-column: 1 / -1; order: -1; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <form class="form login" id="f-login" hidden>
+      <h2 style="text-align:left;font-size:24px">Quản lý đơn</h2>
+      <label>Mật khẩu</label>
+      <input type="password" id="pw" autocomplete="current-password">
+      <div class="err" id="loi-login" hidden></div>
+      <button class="btn btn-big">Đăng nhập</button>
+    </form>
+
+    <div class="ad" id="ad" hidden>
+      <div class="ad-top">
+        <h1>Đơn đặt video</h1>
+        <input id="tim" placeholder="Tìm tên, SĐT, mã...">
+        <select id="loc">
+          <option value="">Tất cả trạng thái</option>
+          <option value="moi">Mới</option><option value="da-lien-he">Đã liên hệ</option>
+          <option value="dang-lam">Đang làm</option><option value="hoan-thanh">Hoàn thành</option><option value="huy">Huỷ</option>
+        </select>
+        <button class="btn btn-ghost btn-sm" id="tai-lai">Tải lại</button>
+        <button class="btn btn-ghost btn-sm" id="thoat">Thoát</button>
+      </div>
+      <div class="tk" id="tk"></div>
+      <div id="ds"></div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

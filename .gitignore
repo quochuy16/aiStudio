@@ -1,0 +1,5 @@
+# Dữ liệu đơn khách hàng — không bao giờ đưa vào git
+data/
+.env
+*.local.json
+node_modules/

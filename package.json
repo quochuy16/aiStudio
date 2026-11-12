@@ -1,0 +1,11 @@
+{
+  "name": "web-dat-video-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website quảng cáo editor video AI, nhận đơn đặt làm video",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/api.test.js"
+  }
+}
